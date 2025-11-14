@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="appTitle">Aapka Kaam Aapki Pehchhan</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      font-family: Arial, sans-serif;
+    }
+    .welcome-container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    }
+    .welcome-container h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
+    }
+    .welcome-container button {
+      background: #4facfe;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .welcome-container button:hover {
+      background: #00c6ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1 data-key="appTitle">🌟 Aapka Kaam Aapki Pehchhan</h1>
+    <p data-key="welcomeText">Connecting workers & employers easily.</p>
+    <button data-key="getStarted" onclick="window.location.href='index.html#login'">Get Started</button>
+  </div>
+
+<script src="translations.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("ak_lang") || "en";
+    if (typeof applyTranslations === "function") applyTranslations(lang);
+  });
+</script></body>
+</html>

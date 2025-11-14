@@ -1,0 +1,407 @@
+
+:root{
+  --bg:#fff; --nav:#000B58; --accent:#ff6b35; --muted:#6b7280; --card:#ffffff;
+  --green:#27AE60; --blue:#2980B9; --purple:#8E44AD; --orange:#E67E22;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:#dfeff9; color:#12263f; -webkit-font-smoothing:antialiased}
+.site-header{background:var(--nav);color:rgb(255, 255, 255);padding:14px 18px;box-shadow:0 6px 10px rgba(16, 24, 40, 0.146)}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:12px;}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-img{width:56px;height:56px;border-radius:10px;background:rgb(254, 241, 200);padding:6px;}
+.brand-title{font-size:20px;font-weight:700}
+.lang-wrap select{padding:8px;border-radius:8px;border:none;}
+
+/* nav */
+.main-nav{max-width:1100px;margin:12px auto;display:flex;gap:8px;justify-content:center;padding:0 12px}
+.nav-btn{flex:1;min-width:100px;padding:10px 12px;border-radius:10px;border:none;background:#fff; cursor:pointer;font-weight:700;color:var(--nav);display:flex;gap:8px;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(2, 6, 23, 0.148)}
+.nav-btn:hover{transform:translateY(-4px)}
+
+/* main */
+.main{max-width:1100px;margin:18px auto;padding:12px}
+.section{display:none;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 12px 30px rgba(2,6,23,0.06)}
+.section.active{display:block}
+
+/* hero */
+.hero{display:flex;align-items:center;gap:20px;justify-content:space-between}
+.hero-text{flex:1}
+.hero-heading{font-size:28px;margin-bottom:8px}
+.hero-img img{width:180px}
+
+.home-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:18px}
+.card{background:#fff;padding:18px;border-radius:12px;text-align:center;cursor:pointer;box-shadow:0 12px 30px rgba(2,6,23,0.04);transition:transform .18s}
+.card:hover{transform:translateY(-8px)}
+.card .card-icon{font-size:36px}
+.card .card-title{font-weight:800;margin-top:8px}
+.card.green{border-left:8px solid var(--green)}
+.card.blue{border-left:8px solid var(--blue)}
+.card.orange{border-left:8px solid var(--orange)}
+.card.purple{border-left:8px solid var(--purple)}
+
+/* about */
+.about-card{margin-top:18px;padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#f8fbff);box-shadow:0 10px 24px rgba(2,6,23,.04)}
+
+/* form grid */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.col{display:flex;flex-direction:column}
+.full{grid-column:1/-1;margin-top:12px}
+.form-grid label{margin-top:8px;font-weight:700;font-size:14px}
+.form-grid input, .form-grid select{padding:10px;border-radius:8px;border:1px solid #e8f0ff;margin-top:6px;font-size:15px}
+
+/* small-form */
+.small{max-width:520px;margin:0 auto}
+.small-form{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+
+/* buttons */
+.btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:700}
+.primary{background:linear-gradient(90deg,var(--nav),#1857e5);color:white}
+.ghost{background:transparent;border:1px solid #dbeafe;color:var(--nav)}
+
+/* messages/results */
+.form-msg{margin-top:10px;font-weight:700}
+.results-area{margin-top:16px}
+.result-card{display:flex;gap:12px;padding:12px;border-radius:10px;align-items:center;box-shadow:0 10px 24px rgba(2,6,23,0.04);margin-bottom:10px}
+.result-card img{width:84px;height:84px;border-radius:8px;object-fit:cover}
+.result-card .meta{font-size:14px}
+
+/* help */
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.help-card{background:linear-gradient(180deg,#fff,#f8fbff);padding:12px;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+.big-contact{font-weight:800;font-size:18px;margin-top:6px}
+
+/* footer */
+.site-footer{max-width:1100px;margin:18px auto;padding:12px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+
+/* responsive */
+@media (max-width:980px){.form-grid{grid-template-columns:1fr}.hero{flex-direction:column;text-align:center}.hero-img img{width:140px}}
+@media (max-width:520px){.brand-title{font-size:18px}.nav-btn{font-size:13px}}
+
+
+
+.muted {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.muted a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+.muted a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.432), rgba(255, 255, 255, 0.432)), 
+    url("bg2.jpeg") no-repeat center/cover;height:380px; 
+}
+
+#login, #signup, #addWorker, #findWorker{
+ background:rgba(255, 255, 255, 0.753);
+
+
+}
+#lg_phone,#lg_password,#su_phone{
+  border: none;
+  border-radius: 8px; 
+  padding: 8px;
+  width: 80%;
+}
+#su_name,#su_password{
+  border: none;
+  border-radius: 8px; 
+  padding: 8px;
+  width: 80%;
+}
+/* Modal overlay */
+.modal {
+  /* display: none;  */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0); /* semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: zoomIn 0.3s ease;
+}
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 99999; /* ensure it's above everything */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+
+.modal-content p {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.modal-content .btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+}
+
+.modal-content .btn:hover {
+  background: #0056b3;
+}
+
+/* Small animation */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.modal-content .btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn.primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #0056b3;
+}
+
+.btn.secondary {
+  background: #fc0000;
+  color: #ffffff;
+}
+
+.btn.secondary:hover {
+  background: #eb4e5b;
+}
+
+#landing{
+  height: 400px;
+  width: 100vw; /* viewport width */
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+ color: white;
+ margin-top: 115px;
+ background: rgba(0, 0, 0, 0);
+flex-direction: column;
+  
+}
+
+#getstarted{
+width: 115px;
+text-align: center;
+height: 38px;
+font-size: 17px;
+margin-top: 18px;
+color: rgb(46, 45, 45);
+background: #f4b400;
+border-radius: 15px;
+}
+#getstarted:hover{
+  background: #f6c43b;
+}
+
+.DF{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+  padding-bottom: 200px;
+  line-height: 20px;
+
+}
+#landinfo{
+  font-size: 19.2px;
+  color: white;
+  float: left;
+  margin-left: 100px;
+text-align: left;
+  margin-top: -30px;
+  font-weight: bold;
+}
+
+#landing h1{
+  float: left;
+  margin-bottom: 40px;
+    margin-left: 100px;
+      font-weight: 800;
+      font-size: 44.8px;
+
+}
+
+#langSelect{
+
+margin-left: 450px;
+}
+
+#adminUser, #adminPass{
+  border: 1px solid grey;
+  border-radius: 8px; 
+  padding: 8px;
+  width: 80%;
+}
+.addDel{
+  background: rgb(255, 93, 93);
+  color: white;
+}
+.addDel:hover{
+  background: red;
+}
+
+.adminLog{
+  background: var(--blue);
+  color: white;
+  margin: 10px;
+}
+.adminLog:hover{
+  background: #0056b3;
+}
+
+
+#adminWorkersTable th,
+#adminWorkersTable td {
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* optional, for row separation */
+  padding-left: 10px;
+}
+.admin-search {
+  margin-bottom: 10px;
+}
+#adminWorkersTable {
+  width: 100%;
+  border-collapse: collapse; /* removes double borders */
+  border: 1px solid #ddd;    /* outer border */
+  min-width: 600px;   
+}
+#adminWorkersTable tr:hover {
+  background-color: #f1f1f1;
+}
+#adminWorkersTable th, #adminWorkersTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#adminSearchInput{
+  padding: 8px;
+  border: none;
+  border-radius: 7px;
+  border: 1px solid grey;
+  outline: none;
+  background: #f6f4f4;
+  width: 200px;
+}
+
+
+#adminBtn{
+background: #fff;
+padding: 8px;
+border: none;
+border-radius: 8px;
+z-index: 1000; 
+margin-right: -10px;
+}
+
+#adminDashboard {
+  background: white;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;              /* was 100vw — leaves space for scrollbar */
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: 30px;
+  margin-top: -30px;
+ height: auto;        /* allow natural height */
+  overflow: visible;          /* allows inner divs to scroll properly */
+}
+.table-container {
+  display: block;          /* important — enables scrolling */
+  max-height: 300px;       /* change this height as needed */
+  overflow-y: auto;        /* shows scrollbar when content exceeds height */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#adminWorkersTable th {
+  background: #f9f9f9;
+  position: sticky;
+  top: 0;                 /* fixes header inside scroll area */
+  z-index: 2;
+}
+
+.fade-out {
+  opacity: 0;
+}
+#addFormMsg {
+  opacity: 1 !important;
+  transition: opacity 1.5s ease-in-out !important;
+}
+
+.footer{max-width:1100px;margin:18px auto;padding:12px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+.modal {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* JS changes this to flex */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99999; /* ensures it's above everything else */
+}
+
+.modal-content {
+  background: white;
+  color: black;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+

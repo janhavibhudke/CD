@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title >Aapka Kaam Aapki Pehchhan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="success.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="img/L2.jpeg" alt="workers" class="brand-img">
+        <h1 class="brand-title">Aapka Kaam Aapki Pehchhan</h1>
+      </div>
+
+      <div class="right-controls">
+        <div class="lang-wrap">
+          <select id="langSelect" aria-label="Language selector"></select>
+        </div>
+        
+      </div>
+        <button id="adminBtn" data-key="admin">Admin</button>
+
+    </div>
+  </header>
+
+<nav class="main-nav" id="mainNav" style="display:none;">
+    <button class="nav-btn nav-add" onclick="showSection('home')"><i class="fa-solid fa-house"></i> <span data-key="home">Home</span></button>
+    <button class="nav-btn nav-add" onclick="showSection('addWorker')"><i class="fa-solid fa-user-plus"></i> <span data-key="addWorker">Join As Worker</span></button>
+    <button class="nav-btn nav-find" onclick="showSection('findWorker')"><i class="fa-solid fa-magnifying-glass"></i> <span data-key="findWorker">Find Worker</span></button>
+    <button class="nav-btn nav-login" onclick="showSection('login')"><i class="fa-solid fa-right-to-bracket"></i> <span data-key="login">Sign Up</span></button>
+    <button class="nav-btn nav-logout" id="logoutBtn">
+  <span id="userGreeting" data-key="username"></span>
+</button>
+
+  </nav>
+<main class="main" id="mainContent" style="display:none;">
+
+    <!-- HOME -->
+ <!-- LANDING PAGE -->
+  <section id="landing" class="section active">
+    <div style="text-align:center; padding:60px;" class="DF">
+      <h1 id="#head1"> हर काम की अपनी पहचान होती है</h1><br>
+      <p id="landinfo" >Find trusted local workers or showcase your skill — no degrees, just talent.</p>
+      <button class="btn primary" id = "getstarted" onclick="showSection('login')">Get Started</button>
+    </div>
+  </section>
+
+
+    <section id="home" class="section">
+      <div class="hero ">
+        <div class="hero-text ">
+          <h2 class="hero-heading">Find trusted workers near you</h2>
+          <p class="muted" data-key="intro">Choose a service, fill a few details and get trusted workers nearby — easy for everyone.</p>
+
+          <div class="home-actions">
+            <div class="card green" onclick="showSection('addWorker')">
+              <div class="card-icon">👷</div>
+              <div class="card-title" data-key="addWorker">Join As Worker</div>
+            </div>
+            <div class="card blue" onclick="showSection('findWorker')">
+              <div class="card-icon">🔍</div>
+              <div class="card-title" data-key="findWorker">Find Worker</div>
+            </div>
+            <div class="card orange" onclick="scrollToServices()">
+              <div class="card-icon">⚙️</div>
+              <div class="card-title" data-key="About">About</div>
+            </div>
+            <div class="card purple" onclick="showSection('help')">
+              <div class="card-icon">❓</div>
+              <div class="card-title" data-key="help">Help</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          
+        </div>
+      </div>
+
+      <div class="about-card">
+        <h3 data-key="aboutTitle">About the App</h3>
+        <p data-key="aboutText">Aapka Kaam Aapki Pehchaan connects workers and employers. It removes language barriers and helps people find trusted local help.</p>
+      </div>
+    </section>
+
+    <!-- ADD WORKER -->
+    <section id="addWorker" class="section">
+      <div class="section-inner">
+        <h2><i class="fa-solid fa-user-plus"></i> <span data-key="addWorker">Join As Worker</span></h2>
+
+        <form id="addForm" class="form-grid" enctype="multipart/form-data" novalidate>
+          <!-- Left column -->
+          <div class="col">
+            <label><i class="fa-solid fa-user"></i> <span data-key="name">Name</span></label>
+            <input id="aw_name" data-pl="namePl" type="text" required>
+
+            <label><i class="fa-solid fa-phone"></i> <span data-key="phone">Phone</span></label>
+            <input id="aw_phone" data-pl="phonePl" type="tel" required>
+
+            <label><i class="fa-solid fa-envelope"></i> <span data-key="email">Email (optional)</span></label>
+            <input id="aw_email" data-pl="emailPl" type="email">
+
+            <label><i class="fa-solid fa-map-marker-alt"></i> <span data-key="address">Address</span></label>
+            <input id="aw_address" data-pl="addressPl" type="text" required>
+
+            <label><i class="fa-solid fa-city"></i> <span data-key="city">City</span></label>
+            <input id="aw_city" data-pl="cityPl" type="text" required>
+
+            <label><i class="fa-solid fa-location-dot"></i> <span data-key="pincode">Pincode</span></label>
+            <input id="aw_pincode" data-pl="pinPl" type="text" required>
+          </div>
+
+          <!-- Right column -->
+          <div class="col">
+          <label><i class="fa-solid fa-briefcase"></i> <span data-key="category" >Category</span></label>
+          
+          <select id="aw_category" required></select>
+          <input id="aw_category_other" type="text" placeholder="Enter category" style="display:none; margin-top:5px;">
+
+
+            <label><i class="fa-solid fa-venus-mars"></i> <span data-key="gender">Gender</span></label>
+            <select id="aw_gender">
+              <option value="" disabled selected>Select gender</option>
+              <option value="male" data-key="male">Male</option>
+              <option value="female" data-key="female">Female</option>
+              <option value="other" data-key="other">Other</option>
+
+            </select>
+
+            <label><i class="fa-solid fa-calendar-days"></i> <span data-key="experience">Experience (years)</span></label>
+            <input id="aw_experience" type="number" min="0" value="0">
+
+            <label><i class="fa-solid fa-clock"></i> <span data-key="availability">Availability</span></label>
+            <input id="aw_availability" data-pl="availPl" type="time">
+
+            <label><i class="fa-solid fa-id-card"></i> <span data-key="aadhaarNo">Aadhaar Number</span></label>
+            <input id="aw_aadhaar" data-pl="aadhaarPl" type="text">
+            
+            <label><i class="fa-solid fa-camera"></i> <span data-key="aadhaarPhoto">Upload Aadhaar Photo</span></label>
+            <input id="aw_aadhaar_photo" type="file" accept="image/*" capture="environment" required>
+            <img id="preview" style="max-width: 200px; display:none;" />
+
+
+            <label><i class="fa-solid fa-image"></i> <span data-key="profilePhoto">Profile Photo (optional)</span></label>
+            <input id="aw_profile_photo" type="file" accept="image/*" capture="environment">
+          </div>
+
+          <div class="full">
+            <div class="controls">
+              <button type="submit" class="btn primary"><i class="fa-solid fa-check"></i> <span data-key="submit" id="Success-btn" onclick="fun_succ">Submit</span></button>
+              <button type="button" class="btn ghost" onclick="showSection('home')"><i class="fa-solid fa-arrow-left"></i> <span data-key="back">Back</span></button>
+            </div>
+            <div id="addFormMsg" class="form-msg" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FIND WORKER -->
+    <section id="findWorker" class="section">
+      <div class="section-inner">
+        <h2><i class="fa-solid fa-magnifying-glass"></i> <span data-key="findWorker">Find Worker</span></h2>
+
+        <form id="findForm" class="form-grid" novalidate>
+          <div class="col">
+            <label><i class="fa-solid fa-map-marker-alt"></i> <span data-key="location">Location</span></label>
+            <input id="fw_location" data-pl="locPl" type="text" required>
+
+
+          <select id="fw_category" required></select>
+          <input id="fw_category_other" type="text" placeholder="Enter category" style="display:none; margin-top:5px;">
+
+
+            <label><i class="fa-solid fa-venus-mars"></i> <span data-key="genderPref">Gender Preference</span></label>
+            <select id="fw_gender">
+              <option value="" disabled selected>Select gender</option>
+              <option value="male" data-key="male">Male</option>
+              <option value="female" data-key="female">Female</option>
+              <option value="other" data-key="other">Other</option>
+
+            </select>
+          </div>
+
+          <div class="col">
+            <label><i class="fa-solid fa-star"></i> <span data-key="minExperience">Minimum Experience (yrs)</span></label>
+            <input id="fw_minexp" type="number" min="0" value="0">
+
+            <label><i class="fa-solid fa-clock"></i> <span data-key="needTime">When needed</span></label>
+            <input id="fw_needed_time" data-pl="needTimePl" type="text">
+
+            <label><i class="fa-solid fa-phone"></i> <span data-key="contact">Your Contact Number</span></label>
+            <input id="fw_contact" data-pl="contactPl" type="tel" required>
+          </div>
+
+          <div class="full">
+            <div class="controls">
+              <button type="submit" class="btn primary"><i class="fa-solid fa-search"></i> <span data-key="search">Search</span></button>
+              <button type="button" class="btn ghost" onclick="showSection('home')"><i class="fa-solid fa-arrow-left"></i> <span data-key="back">Back</span></button>
+            </div>
+            <div id="findFormMsg" class="form-msg" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <div id="results" class="results-area" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="section">
+      <div class="section-inner small">
+        <h2><i class="fa-solid fa-right-to-bracket"></i> <span data-key="login1">Login</span></h2>
+        <form id="loginForm" class="small-form" novalidate>
+          <label><i class="fa-solid fa-phone"></i> <span data-key="phone">Phone</span></label>
+          <input id="lg_phone" data-pl="phonePl" type="tel" required>
+
+          <label><i class="fa-solid fa-lock"></i> <span data-key="password">Password</span></label>
+          <input id="lg_password" data-pl="passwordPl" type="password" required>
+
+          <div class="controls">
+            <button type="submit" class="btn primary"><i class="fa-solid fa-right-to-bracket"></i> <span data-key="login2">Login</span></button>
+            <button type="button" class="btn ghost" onclick="showSection('landing')"><i class="fa-solid fa-arrow-left"></i> <span data-key="back">Back</span></button>
+          </div>
+          <div id="loginMsg" class="form-msg" role="status" aria-live="polite"></div>
+                    <!-- Dont have account  -->
+
+          <p class="muted">
+  Don’t have an account? 
+  <a href="javascript:void(0)" onclick="showSection('signup')">Signup here</a>
+</p>
+
+
+
+        </form>
+      </div>
+    </section>
+
+<!-- Sign Up -->
+<!-- SIGNUP -->
+<section id="signup" class="section">
+  <div class="section-inner small">
+    <h2><i class="fa-solid fa-user-plus"></i> <span data-key="signup">Signup</span></h2>
+    <form id="signupForm" class="small-form" novalidate>
+      <label><i class="fa-solid fa-user"></i> <span data-key="name">Name</span></label>
+    <input id="su_name" data-pl="namePl" type="text" required >
+
+      <label><i class="fa-solid fa-phone"></i> <span data-key="phone">Phone</span></label>
+      <input id="su_phone" data-pl="phonePl" type="tel" required>
+
+    
+      <label><i class="fa-solid fa-lock"></i> <span data-key="password">Password</span></label>
+      <input id="su_password" data-pl="passwordPl" type="password" required>
+
+      <div class="controls">
+        <button type="submit" class="btn primary"><i class="fa-solid fa-user-plus"></i> <span data-key="signup">Signup</span></button>
+        <button type="button" class="btn ghost" onclick="showSection('landing')"><i class="fa-solid fa-arrow-left"></i> <span data-key="back">Back</span></button>
+      </div>
+      <div id="signupMsg" class="form-msg" role="status" aria-live="polite"></div>
+<!-- link -->
+      <p class="muted">
+  Already have an account? 
+  <a href="javascript:void(0)" onclick="showSection('login')">Login here</a>
+</p>
+
+    </form>
+  </div>
+</section>
+
+
+    <!-- HELP -->
+    <section id="help" class="section">
+      <div class="section-inner">
+        <h2><i class="fa-solid fa-circle-info"></i> <span data-key="help">Help</span></h2>
+
+        <div class="help-grid">
+          <div class="help-card">
+            <h3>📞 <span data-key="helplineLabel">Helpline</span></h3>
+            <p class="big-contact">+91 98765 43210</p>
+            <p data-key="callHours">Mon–Sun: 9:00–19:00</p>
+          </div>
+
+          <div class="help-card">
+            <h3>✉️ <span data-key="emailLabel">Email</span></h3>
+            <p class="big-contact">support@aapkakaam.in</p>
+            <p data-key="emailText">We reply within 24 hours.</p>
+          </div>
+
+          <div class="help-card">
+            <h3>❓ <span data-key="faqLabel">Quick FAQs</span></h3>
+            <ul class="faq">
+              <li data-key="faq1">How do I register as worker?</li>
+              <li data-key="faq2">How to search and contact worker?</li>
+              <li data-key="faq3">Is my data safe?</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <button class="btn ghost" onclick="showSection('home')"><i class="fa-solid fa-arrow-left"></i> <span data-key="back">Back</span></button>
+        </div>
+      </div>
+    </section>
+      <!-- ADMIN LOGIN -->
+<section id="adminLogin" class="section">
+  <div class="section-inner small">
+    <h2>Admin Login</h2>
+    <form id="adminLoginForm" class="small-form" novalidate>
+      <label>Username</label>
+      <input id="adminUser" type="text" required>
+
+      <label>Password</label>
+      <input id="adminPass" type="password" required>
+
+      <div class="controls">
+        <button type="submit" class="btn primary">Login</button>
+        <button type="button" class="btn ghost" onclick="showSection('landing')">Back</button>
+      </div>
+      <div id="adminLoginMsg" class="form-msg"></div>
+    </form>
+  </div>
+</section>
+<!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="section">
+  <div class="section-inner ">
+    <h2>Admin Dashboard</h2>
+    <p>Welcome, Admin! Manage all workers here.</p>
+    <div class="admin-search ">
+  <input type="text" id="adminSearchInput" placeholder="Search workers..." />
+</div>
+<div class="table-container">
+  <table id="adminWorkersTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+                <th>Experience</th>
+        <th>City</th>
+         <th>Availability</th>
+
+        <th>Phone</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="adminWorkersTbody">
+      <!-- Workers rows will be injected here -->
+       
+    </tbody>
+  </table>
+</div>
+    <button class="btn ghost adminLog" onclick="logoutAdmin()">Logout</button>
+  </div>
+</section>
+
+  </main>
+<div id="new-content"></div>
+<script>
+  fetch("jk.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("new-content").innerHTML = html;
+
+      const savedLang = localStorage.getItem("ak_lang") || "en";
+      if (typeof applyTranslations === "function") applyTranslations(savedLang);
+    })
+    .catch(err => console.error("Error loading jk.html:", err));
+</script>
+
+
+  <script>
+const fileInput = document.getElementById('aw_aadhaar_photo');
+const preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(){
+    const file = this.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+    }
+});
+</script>
+<!-- Logout Modal -->
+<div id="logoutModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p>✅ Do you want to log out.</p>
+    <div class="modal-buttons">
+      <button id="logoutOkBtn" class="btn primary">OK</button>
+      <button id="logoutCancelBtn" class="btn secondary">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+    <div> © 2025 Aapka Kaam Aapki Pehchaan</div>
+    <div class="footer-right">
+      <a href="tel:+919876543210" class="social"><i class="fa-solid fa-phone"></i></a>
+      <a href="mailto:support@aapkakaam.in" class="social"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#" class="social"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </footer>
+  <!-- ✅ Success Modal -->
+<!-- ✅ Worker Added Success Modal -->
+<div id="Succ_Modal" class="modal" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+">
+  <div style="
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  ">
+    <h2>✅ Worker Added Successfully!</h2>
+    <button onclick="closeSuccessModal()" style="
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin-top: 15px;
+      cursor: pointer;
+    ">OK</button>
+  </div>
+</div>
+
+    <script src="translations.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

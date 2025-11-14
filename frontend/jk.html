@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="howItWorksTitle">How It Works</title>
+  <link rel="stylesheet" href="jk.css">
+</head>
+<body>
+  <div class="connect connect1">
+    <div class="sub1">
+      <h1 data-key="howItWorksTitle">How It Works</h1>
+
+      <div class="sub11">
+        <div class="sub3">
+          <p id="id2"><b data-key="createProfileTitle">Create Your Profile</b></p>
+          <p data-key="createProfileText">Sign up and add your skills, experience, and contact information. Upload a photo and verification documents to build trust.</p>
+        </div>
+        <div class="sub4">
+          <p id="id1"><b data-key="searchTitle">Search or Get Found</b></p>
+          <p data-key="searchText">Workers can showcase their skills while employers can search by location, skill type, and availability.</p>
+        </div>
+      </div>
+
+      <div class="sub5">
+        <p id="id5"><b data-key="connectTitle">Connect Directly</b></p>
+        <p data-key="connectText">Contact workers directly through phone or message. No middleman fees or complicated booking systems.</p>
+      </div>
+    </div>
+    <div class="sub2"></div>
+  </div>
+
+  <div class="services">
+    <p id="Heading"><b data-key="skillsSupportTitle">Skills We Support</b></p>
+    <div class="des"></div>
+    <div class="services1">
+      <div class="service-item">
+        <p data-key="cook">Cook</p>
+        <div class="service-box">
+          <img src="img/chef.jpeg" alt="">
+          <p class="text" data-key="cookText">With formal training, is proficient in all aspects of food preparation.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <p data-key="driver">Driver</p>
+        <div class="service-box">
+          <img src="img/driver.jpeg" alt="">
+          <p class="text" data-key="driverText">Professional drivers for personal transportation and delivery services.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <p data-key="siteworker">Site Worker</p>
+        <div class="service-box">
+          <img src="img/SW.jpeg" alt="">
+          <p class="text" data-key="siteworkerText">Unloading, carrying, and organizing construction materials and supplies.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <p data-key="maid">Maid</p>
+        <div class="service-box">
+          <img src="img/maid.jpeg" alt="">
+          <p class="text" data-key="maidText">Cleaning, cooking, and general household assistance services.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <p data-key="electrician">Electrician</p>
+        <div class="service-box">
+          <img src="img/EL.jpeg" alt="">
+          <p class="text" data-key="electricianText">Wiring, lighting installation, and electrical repairs by certified professionals.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <p data-key="carpenter">Carpenter</p>
+        <div class="service-box">
+          <img src="img/carpenter.jpeg" alt="">
+          <p class="text" data-key="carpenterText">Custom woodwork, furniture repair, and construction services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- load translations -->
+  <script src="translations.js"></script>
+  <script>
+    function applyTranslations(lang) {
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+          el.innerText = TRANSLATIONS[lang][key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = localStorage.getItem("lang") || "en";
+      applyTranslations(lang);
+    });
+  </script>
+</body>
+</html>
