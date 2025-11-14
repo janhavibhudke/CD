@@ -21,8 +21,7 @@ const JWT_SECRET = "yourSecretKey";
 
 // ========== MongoDB Connection ==========
 mongoose.connect(
-  "mongodb+srv://janhavi:imzuUIUk0P4SJ3DL@cluster0.a34dviv.mongodb.net/aapkakaam?retryWrites=true&w=majority&appName=Cluster0",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  "mongodb+srv://janhavi:imzuUIUk0P4SJ3DL@cluster0.a34dviv.mongodb.net/aapkakaam?retryWrites=true&w=majority"
 )
 .then(() => console.log("✅ MongoDB Atlas Connected"))
 .catch(err => console.error("❌ MongoDB Atlas Error:", err));
