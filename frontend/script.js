@@ -60,7 +60,7 @@ function showSection(id) {
       break;
    
       case 'home':
-          body.style.backgroundImage = "url('img/J5.jpeg') ";
+          body.style.backgroundImage = "url('img/j5.jpeg') ";
       // body.style.backgroundPosition = "center 30%";
 
             const hed3 = document.querySelector(".site-header");
@@ -72,7 +72,7 @@ function showSection(id) {
 
 
     case 'addWorker':
-      body.style.backgroundImage = "url('img/J4.jpeg') ";
+      body.style.backgroundImage = "url('img/j4.jpeg') ";
       body.style.backgroundRepeat = "no-repeat";
       body.style.backgroundSize = "100% 1000px"; 
       body.style.backgroundPosition = "center 20%";
@@ -855,17 +855,5 @@ function updateGreeting() {
 function closeSuccessModal() {
   const modal = document.getElementById("Succ_Modal");
   if (modal) modal.style.display = "none";
-
-  // ✅ Only call showSection if it exists
-  if (typeof showSection === "function") {
     showSection("home");
-  }
 }
-// function user_home() {
-//   const modal = document.getElementById("Succ_Modal");
-//   if (modal) modal.style.display = "none";
-
-//   if (typeof showSection === "function") {
-//     showSection("home");
-//   }
-// }
