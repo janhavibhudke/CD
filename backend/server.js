@@ -7,7 +7,12 @@ const multer = require("multer");
 const path = require("path");  // ✅ Moved path import to top
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type, Authorization"
+}));
+
 app.use(express.json());
 
 // ========== Multer Storage ==========
