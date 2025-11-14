@@ -836,10 +836,6 @@ async function deleteWorker(id) {
 
 function logoutAdmin() {
   localStorage.removeItem("isAdmin");
-  // Show the nav again
-  // const nav = document.getElementById("mainNav");
-  // if(nav) nav.style.display = "flex";
-
   showSection("landing");
   
 }
@@ -855,5 +851,6 @@ function updateGreeting() {
 function closeSuccessModal() {
   const modal = document.getElementById("Succ_Modal");
   if (modal) modal.style.display = "none";
-    showSection("home");
+  clearForms();
+  showSection("home"); 
 }
