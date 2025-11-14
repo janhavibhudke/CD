@@ -851,6 +851,7 @@ function updateGreeting() {
 function closeSuccessModal() {
   const modal = document.getElementById("Succ_Modal");
   if (modal) modal.style.display = "none";
-  clearForms();
+  document.getElementById("addForm").reset();
+
   showSection("home"); 
 }
