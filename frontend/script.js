@@ -2,7 +2,7 @@ console.log("✅ script.js loaded!");
 
 const modal = document.getElementById("logoutModal");
 
-const backendURL = "http://localhost:5000";
+const backendURL = "https://cd-un1i.onrender.com/";
 // Helper function for API calls with automatic token expiry handling
 async function apiFetch(endpoint, options = {}) {
   const token = localStorage.getItem("token");
